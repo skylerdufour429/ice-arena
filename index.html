@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Static archive browser for iOS app metadata."
+    />
+    <meta name="theme-color" content="#0a84ff" />
+    <link rel="manifest" href="manifest.json" />
+    <link rel="icon" href="icon.svg" type="image/svg+xml" />
+    <title>IPA Archive</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="topbar">
+        <div>
+          <p class="eyebrow">iOS archive browser</p>
+          <h1>IPA Archive</h1>
+        </div>
+        <button id="themeToggle" class="theme-toggle" aria-label="Toggle theme">
+          🌙
+        </button>
+      </header>
+
+      <main>
+        <section class="hero panel">
+          <div>
+            <p class="tag">Metadata archive</p>
+            <h2>iOS App Records</h2>
+          </div>
+          <p class="muted">
+            Browse the supplied app metadata and add this archive site to your
+            Home Screen from Safari.
+          </p>
+        </section>
+
+        <section class="toolbar panel" aria-label="Filters">
+          <label class="field">
+            <span>Search</span>
+            <input id="searchInput" type="search" placeholder="Search apps..." />
+          </label>
+          <label class="field">
+            <span>Sort by</span>
+            <select id="sortSelect">
+              <option value="name-asc">Name A–Z</option>
+              <option value="name-desc">Name Z–A</option>
+              <option value="size-desc">Largest file</option>
+              <option value="size-asc">Smallest file</option>
+              <option value="version-desc">Newest version</option>
+            </select>
+          </label>
+        </section>
+
+        <section id="stats" class="stats" aria-live="polite"></section>
+
+        <section id="appList" class="app-grid" aria-live="polite"></section>
+      </main>
+    </div>
+
+    <template id="appCardTemplate">
+      <article class="app-card panel">
+        <div class="card-header">
+          <div class="app-icon" aria-hidden="true">A</div>
+          <div>
+            <h3 class="app-name"></h3>
+            <p class="bundle-id"></p>
+          </div>
+        </div>
+
+        <dl class="meta-list">
+          <div>
+            <dt>Version</dt>
+            <dd class="version"></dd>
+          </div>
+          <div>
+            <dt>Platform</dt>
+            <dd class="platform"></dd>
+          </div>
+          <div>
+            <dt>Minimum OS</dt>
+            <dd class="minimum-os"></dd>
+          </div>
+          <div>
+            <dt>File Size</dt>
+            <dd class="file-size"></dd>
+          </div>
+        </dl>
+      </article>
+    </template>
+
+    <script src="app.js"></script>
+  </body>
+</html>
