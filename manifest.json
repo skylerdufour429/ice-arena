@@ -1,0 +1,17 @@
+{
+  "name": "IPA Archive",
+  "short_name": "IPA Archive",
+  "description": "Static archive browser for iOS app metadata.",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#081120",
+  "theme_color": "#0a84ff",
+  "icons": [
+    {
+      "src": "icon.svg",
+      "sizes": "512x512",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
